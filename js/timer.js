@@ -31,22 +31,20 @@ class CountdownTimer {
 
 const timer = new CountdownTimer({
   selector: "#timer-1",
-  targetDate: new Date("Apr 16, 2021"),
+  targetDate: new Date("Apr 25, 2021"),
 });
 
 timer.start();
 
-
-
-function updateTimer(time) {
-
-  const Settings = (days, hours, mins, secs) => {
+const Settings = (days, hours, mins, secs) => {
     refs.days.textContent = `${days}`;
     refs.hours.textContent = `${hours}`;
     refs.mins.textContent = `${mins}`;
     refs.secs.textContent = `${secs}`;
 } 
 
+function updateTimer(time) {
+  
 
   const days = pad(Math.floor(time / (1000 * 60 * 60 * 24)));
   const hours = pad(
@@ -56,7 +54,7 @@ function updateTimer(time) {
   const secs = pad(Math.floor((time % (1000 * 60)) / 1000));
 
  
-Settings(days, hours, mins, secs)
+  Settings(days, hours, mins, secs)
 }
 
 
