@@ -34,16 +34,20 @@ const timer = new CountdownTimer({
   targetDate: new Date("Apr 25, 2021"),
 });
 
-timer.start();
-
 const Settings = (days, hours, mins, secs) => {
     refs.days.textContent = `${days}`;
     refs.hours.textContent = `${hours}`;
     refs.mins.textContent = `${mins}`;
     refs.secs.textContent = `${secs}`;
-} 
+}
+  
+timer.start();
+
+ 
+
 
 function updateTimer(time) {
+  
   
 
   const days = pad(Math.floor(time / (1000 * 60 * 60 * 24)));
@@ -56,6 +60,7 @@ function updateTimer(time) {
  
   Settings(days, hours, mins, secs)
 }
+
 
 
 function pad(value) {
